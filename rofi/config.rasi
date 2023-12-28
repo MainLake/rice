@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: "Fira Code 10";
+
+    // colores tokyo night
+    color-text: #a9b1d6;
+    color-text-light: #c0caf5;
+    color-text-dark: #6e7592;
+    color-background: #1a1b26;
+    color-background-light: #212337;
+    color-background-dark: #16161d;
+    color-background-darker: #0d0d13;
+    color-accent: #7aa2f7;
+    color-accent-light: #9fb3f8;
+    color-accent-dark: #4f6bf7;
+    color-accent-darker: #2e51a2;
+    color-selection: #3a3e5b;
+    color-selection-light: #4d5172;
+    color-selection-dark: #2c2f44;
+    color-selection-darker: #1c1e2a;
+    color-cursor: #c0caf5;
+    color-cursor-light: #c0caf5;
+    color-cursor-dark: #6e7592;
+    color-cursor-darker: #6e7592;
+    color-guide: #3a3e5b;
+    transparent: #00000000;
+}
+
+window {
+    location: center;
+    width: 25%;
+    background-color: @color-background-light;
+    children: [ mainbox ];
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    padding: 20px;
+}
+
+prompt {
+    enabled: false;
+}
+
+inputbar {
+    width: 20%;
+    children: [ button ,entry];
+}
+
+button {
+    str: " > ";
+    text-color: @color-text;
+    expand: false;
+    font: "Fira Code 20";
+}
+
+entry {
+    text-color: @color-text;
+    vertical-align: 0.5;
+    font: "Fira Code 15";
+}
+
+listview {
+    background-color: @color-background-light;
+    border-color: @color-background-light;
+    children: [ element ];
+    spacing: 8px;
+    margin: 20px 0px 0px 0px; 
+}
+
+element {
+    border-radius: 5px; 
+    padding: 5px; 
+    children: [ element-icon, element-text ];
+    horizontal-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    font: "Fira Code 14";
+    margin: 0px 0px 0px 20px;
+}
+
+element-icon {
+    margin: 0px 0px 0px 20px;
+    size: 25;
+}
+
+element normal.normal {
+    background-color: @transparent;
+    text-color: @color-text;
+}
+
+element alternate.normal {
+    background-color: @transparent;
+    text-color: @color-text;
+}
+
+element selected normal {
+    background-color: @color-selection;
+    text-color: @color-text-light;
+}

@@ -1,0 +1,8 @@
+#! /bin/bash
+
+cadena=$(xrandr --query | grep " connected")
+# Dividir la cadena utilizando el espacio como delimitador
+palabras=$(echo $cadena | cut -d' ' -f 1-)
+
+# Imprimir las palabras
+echo "$palabras"
